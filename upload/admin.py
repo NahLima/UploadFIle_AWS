@@ -5,7 +5,7 @@ from upload.models import Media
 
 
 class Medias(admin.ModelAdmin):
-    list_display = ['title', 'document']
+    list_display = ['title', 'document', 'alt']
     search_fields = ('title',)
 
 
