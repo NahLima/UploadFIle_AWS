@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-from enviroment import SECRET_KEY_DJANGO
+from enviroment.secrets import SECRET_KEY_DJANGO
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -126,6 +126,3 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 AWS_QUERYSTRING_AUTH = False
 
-AWS_S3_ACCESS_KEY_ID = 
-AWS_S3_SECRET_ACCESS_KEY = 
-AWS_STORAGE_BUCKET_NAME = 
