@@ -1,5 +1,6 @@
+from email.mime import image
 from django.db import models
-
+from django.core.files.base import ContentFile
 # Create your models here.
 class Media(models.Model):
     title = models.CharField(max_length=30)
@@ -8,18 +9,11 @@ class Media(models.Model):
     width = models.PositiveIntegerField('Largura da imagem', default=0, editable=False)
     height = models.PositiveIntegerField('Altura da imagem', default=0, editable=False)
 
-    @property
-    def size(self):
-        return self.width, self.height
-
-    @property
-    def url(self):
-        return str(self.document)
-
     def to_dict(self):
         media_dict = {
             'title': self.title,
-            'document': self.url,
+            'document': self.document,
             'alt': self.alt,
-            'size': self.size
+            'width': self.width, 
+            'heigth': self.height
         }
