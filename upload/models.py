@@ -14,6 +14,6 @@ class Media(models.Model):
             'title': self.title,
             'document': self.document,
             'alt': self.alt,
-            'width': self.width, 
-            'heigth': self.height
+            'width': self.width, # mudar para self.document.width
+            'heigth': self.height # mudar para self.document.height
         }
